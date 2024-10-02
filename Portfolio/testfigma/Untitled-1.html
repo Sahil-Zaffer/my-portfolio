@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of Sahil Zaffer, showcasing web development projects and design skills.">
+    <link rel="icon" href="path-to-favicon.ico">
+
+    <title>Sahil Zaffer - My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Background color */
+            color: #FFFFFF; /* Light text color */
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: relative;
+            background-color: #1E1E1E; /* Dark background */
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-first-name {
+            color: #ffffff; /* Bright accent color for 'Sahil' */
+        }
+
+        .logo-last-name {
+            color: #39C0FF; /* Bright accent color */
+            transition: transform 0.3s; /* Add transition for hover effect */
+        }
+
+        /* Hover Effect for Last Name */
+        .logo-last-name:hover {
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 3rem; /* Increased spacing between links */
+        }
+
+        .nav-links li {
+            position: relative; /* For underline effect */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #FFFFFF; /* White text */
+            font-size: 1.2rem; /* Increased font size */
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #39C0FF; /* Bright accent color */
+        }
+
+        /* Underline effect on hover */
+        .nav-links a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background: #39C0FF; /* Underline color */
+            width: 0; /* Start with width 0 */
+            transition: width 0.3s; /* Smooth transition for width */
+            position: absolute;
+            bottom: -5px; /* Position below text */
+            left: 0;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%; /* Expand underline on hover */
+        }
+
+        /* Hamburger Icon Styles */
+        .nav-toggle {
+            display: none; /* Hide by default */
+            cursor: pointer;
+            font-size: 2rem; /* Adjust size of the hamburger icon */
+        }
+
+        /* Media Query for Responsive Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide links initially */
+                flex-direction: column; /* Stack links vertically */
+                position: absolute; /* Position off-screen */
+                top: 60px; /* Adjust based on nav height */
+                left: 0;
+                width: 100%;
+                background-color: #1E1E1E; /* Match nav background */
+                gap: 1rem; /* Spacing between links */
+                padding: 1rem 0; /* Padding for better click area */
+            }
+            
+            .nav-links.active {
+                display: flex; /* Show links when active */
+            }
+            
+            .nav-toggle {
+                display: block; /* Show hamburger icon on mobile */
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative; 
+            overflow: hidden; 
+            background-color: #000; 
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 180, 243, 0.3), rgba(245, 24, 4, 0.3));
+            z-index: 1; 
+            animation: pulse 10s infinite, gradientMove 10s ease infinite; 
+            filter: blur(15px); /* Gaussian blur effect */
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .hero-content {
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF; 
+            text-shadow: 0 0 15px rgba(57, 192, 255, 0.7); /* Glowing effect */
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #CCCCCC; 
+        }
+
+        .cta-btn {
+            background-color: #39C0FF; 
+            color: #000; 
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #00A6D6; 
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 4rem 0;
+            background: repeating-linear-gradient(
+                135deg,
+                #1E1E1E,
+                #1E1E1E 10px,
+                #292929 10px,
+                #292929 20px
+            ); /* Diagonal striped pattern */
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+        }
+
+        .skills-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .profile-wrapper {
+            flex: 1;
+            text-align: center;
+            padding: 2rem;
+            background-color: #292929;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .profile-wrapper:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 5px solid #39C0FF;
+        }
+
+        .profile-wrapper h3 {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-wrapper p {
+            font-size: 1rem;
+            color: #AAAAAA;
+        }
+
+        .skills-wrapper {
+            flex: 2;
+            padding: 1rem;
+        }
+
+        .skills-wrapper h2 {
+            color: #39C0FF;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .skill {
+            margin-bottom: 2rem;
+        }
+
+        .skill h3 {
+            font-size: 1.2rem;
+            color: #FFFFFF;
+            margin-bottom: 0.8rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #333;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 15px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #39C0FF, #00A6D6); /* Gradient background */
+            border-radius: 15px;
+            position: relative;
+            animation: progressAnimation 1.5s ease-in-out forwards; /* Animation on load */
+        }
+
+        @keyframes progressAnimation {
+            from { width: 0%; }
+            to { width: 80%; } /* Adjust skill width as necessary */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1E1E1E; /* Dark background */
+            padding: 2rem 0;
+            text-align: center;
+            color: #CCCCCC;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Media Query for Skills Section */
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center items */
+            }
+
+            .profile-wrapper {
+                margin-bottom: 2rem; /* Spacing between profile and skills */
+            }
+        }
+
+        /* Hover Effects for Skills */
+        .skill:hover h3 {
+            color: #39C0FF; /* Highlight skill title on hover */
+        }
+
+        .progress-bar:hover::before {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighter overlay on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-first-name">Sahil</span>
+                <span class="logo-last-name">Zaffer</span>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm Sahil Zaffer</h1>
+            <p>A passionate web designer and developer.</p>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="skills-container">
+            <div class="profile-wrapper">
+                <img src="your-profile-picture.jpg" alt="Sahil Zaffer" class="profile-picture">
+                <h3>Sahil Zaffer</h3>
+                <p>Web Designer & Developer</p>
+            </div>
+            <div class="skills-wrapper">
+                <h2>My Skills</h2>
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sahil Zaffer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Functionality
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
