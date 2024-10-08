@@ -5,199 +5,327 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio website of Sahil Zaffer, showcasing web development projects and design skills.">
     <link rel="icon" href="path-to-favicon.ico">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <title>Sahil Zaffer - My Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<!-- Navigation Bar -->
-<nav>
-  <div class="nav-container">
-    <div class="logo">
-      <h1><span class="logo-first-name">Sahil</span> <span class="logo-last-name">Zaffer</span></h1>
-  </div>
-  
-      <div class="nav-toggle" onclick="toggleNav()">&#9776;</div> <!-- Hamburger icon -->
-      <ul class="nav-links">
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-      </ul>
-  </div>
-</nav>
-
-      
- <!-- Hero Section -->
-<section id="hero" class="hero-section">
-    <div class="hero-content">
-        <h1>
-            <span id="typed-text"></span><span class="caret">|</span>
-        </h1>
-        <p>I'm a web designer creating inclusive and accessible digital experiences.</p>
-        <a href="#projects" class="cta-btn">View My Work</a>
-    </div>
-</section>
-
-<script>
-  const text = "Hi, I'm Sahil Zaffer"; // Text to type out
-  const typingSpeed = 100; // Typing speed in milliseconds
-  let index = 0;
-
-  function typeText() {
-      if (index < text.length) {
-          document.getElementById('typed-text').innerHTML += text.charAt(index); // Update the correct element
-          index++;
-          setTimeout(typeText, typingSpeed);
-      } else {
-          document.querySelector('.caret').style.display = 'none'; // Hide caret after typing is done
-      }
-  }
-
-  // Start typing effect once the window loads
-  window.onload = typeText;
-</script>
-
-
-
-<!-- Skills Section -->
-<section id="skills" class="skills-section">
-    <div class="skills-container">
-        <div class="profile-wrapper">
-            <img src="img/Sahilz.png" alt="Sahil Zaffer" class="profile-picture" />
-            <h3>Sahil Zaffer</h3>
-            <p>Web Designer & Developer</p>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <h1><span class="logo-first-name">Sahil</span> <span class="logo-last-name">Zaffer</span></h1>
+            </div>
+            <div class="nav-toggle" onclick="toggleNav()">&#9776;</div> <!-- Hamburger icon -->
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="skills-wrapper">
-            <h2>My Skills</h2>
-            <div class="skill">
-                <h3>HTML</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>CSS</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>React</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 75%;"></div>
-                </div>
-            </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>
+                <span id="typed-text"></span><span class="caret">|</span>
+            </h1>
+            <p>I'm a web designer creating inclusive and accessible digital experiences.</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
         </div>
-    </div>
-</section>
+    </section>
 
+    <script>
+        const text = "Hi, I'm Sahil Zaffer"; // Text to type out
+        const typingSpeed = 100; // Typing speed in milliseconds
+        let index = 0;
 
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById('typed-text').innerHTML += text.charAt(index); // Update the correct element
+                index++;
+                setTimeout(typeText, typingSpeed);
+            } else {
+                document.querySelector('.caret').style.display = 'none'; // Hide caret after typing is done
+            }
+        }
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
-    <h2>My Works</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="img/mobile.jpg" alt="Project 1">
-                    <h3>Inclusive Event Booking App</h3>
-                </div>
-                <div class="card-back">
-                    <p>Inclusive and accessible event booking app designed with Figma.</p>
-                    <div class="tags">
-                        <span class="tag">Figma</span>
-                        <span class="tag">Web Design</span>
+        // Start typing effect once the window loads
+        window.onload = typeText;
+    </script>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <div class="profile-wrapper">
+                <img src="img/Sahilz.png" alt="Sahil Zaffer" class="profile-picture" />
+                <h3>Sahil Zaffer</h3>
+                <p>Web Designer & Developer</p>
+            </div>
+            <div class="skills-wrapper">
+                <h2>My Skills</h2>
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
                     </div>
-                    <a href="https://www.figma.com/design/zAgN9shbMxlBCfPOYg4AFi/event-booking-application?node-id=2-19841&node-type=frame&t=8i7w0rYJyRnBInER-0" class="btn">View Project</a>
                 </div>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="img/desktop.jpg" alt="Project 2">
-                    <h3>Job Finder Website</h3>
-                </div>
-                <div class="card-back">
-                    <p>Website to help users find jobs, upload CVs, and more.</p>
-                    <div class="tags">
-                        <span class="tag">Web Development</span>
-                        <span class="tag">Responsive Design</span>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
                     </div>
-                    <a href="https://www.figma.com/design/QeSAX3YPbQBCOKYKwyWnk5/Job-website-for-showcase?node-id=0-1&node-type=canvas&t=WQcLnWJr9pyx6wuK-0" class="btn">View Project</a>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>React</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-         <!-- Coming Soon Card -->
-      <div class="project-card coming-soon">
-        <div class="coming-soon-content">
-            <h3>More Projects Coming Soon!</h3>
-            <p>Stay tuned for exciting new projects that will be added soon.</p>
-      </div>
-    </div>
-  </section>
-  
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>My Works</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/mobile.jpg" alt="Project 1">
+                        <h3>Inclusive Event Booking App</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Inclusive and accessible event booking app designed with Figma.</p>
+                        <div class="tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Web Design</span>
+                        </div>
+                        <a href="https://www.figma.com/design/zAgN9shbMxlBCfPOYg4AFi/event-booking-application?node-id=2-19841&node-type=frame&t=8i7w0rYJyRnBInER-0" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/desktop.jpg" alt="Project 2">
+                        <h3>Job Finder Website</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Website to help users find jobs, upload CVs, and more.</p>
+                        <div class="tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                        <a href="https://www.figma.com/design/QeSAX3YPbQBCOKYKwyWnk5/Job-website-for-showcase?node-id=0-1&node-type=canvas&t=WQcLnWJr9pyx6wuK-0" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Coming Soon Card -->
+            <div class="project-card coming-soon">
+                <div class="coming-soon-content">
+                    <h3>More Projects Coming Soon!</h3>
+                    <p>Stay tuned for exciting new projects that will be added soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Specialties Section -->
     <section id="specialties" class="specialties-section">
         <h2>Specialties</h2>
         <div class="specialties-grid">
-            <div class="specialty-card">
-                <div class="icon-circle">
+            <div class="specialty-card" style="--order: 1;">
+                <div class="specialty-icon">
                     <i class="fas fa-laptop-code"></i>
                 </div>
                 <h3>Website Design</h3>
                 <p>Creating user-friendly web applications.</p>
+                <a href="#" class="btn">Learn More</a>
             </div>
-            <div class="specialty-card">
-                <div class="icon-circle">
+            <div class="specialty-card" style="--order: 2;">
+                <div class="specialty-icon">
                     <i class="fas fa-paint-brush"></i>
                 </div>
                 <h3>UI/UX Design</h3>
                 <p>Designing intuitive interfaces for mobile and desktop.</p>
+                <a href="#" class="btn">Learn More</a>
             </div>
-            <div class="specialty-card">
-                <div class="icon-circle">
+            <div class="specialty-card" style="--order: 3;">
+                <div class="specialty-icon">
                     <i class="fas fa-bullseye"></i>
                 </div>
                 <h3>Interactive Design</h3>
                 <p>Building engaging and dynamic web experiences.</p>
+                <a href="#" class="btn">Learn More</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
+    <section id="contact" class="contact-section">
+        <div id="particles-js" class="particles-background"></div> <!-- Particles Background -->
+        <div class="contact-content">
             <h2>Contact Me</h2>
             <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn primary-btn">Send Message</button>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
-    
+
+    <!-- Add this before the closing </body> tag -->
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const button = this.querySelector('button');
+            button.textContent = 'Sending...'; // Change button text
+            button.disabled = true; // Disable button during submission
+
+            // Simulate sending time (replace with actual submission logic)
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.createElement('p');
+                successMessage.textContent = 'Message Sent Successfully!';
+                successMessage.style.color = '#39C0FF'; // Accent color for the success message
+                successMessage.style.marginTop = '1rem';
+                this.appendChild(successMessage);
+                
+                button.textContent = 'Sent!'; // Change button text after sending
+                button.disabled = false; // Re-enable button
+            }, 2000); // Simulate a 2-second delay
+        });
+    </script>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#39C0FF"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#39C0FF",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
     <!-- Footer -->
     <footer>
         <p>© 2024 Sahil Zaffer. All rights reserved.</p>
