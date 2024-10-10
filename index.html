@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -326,15 +328,42 @@
         });
     </script>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Sahil Zaffer. All rights reserved.</p>
-        <div class="socials-icons">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-description">
+            <p>Passionate web designer creating inclusive and accessible digital experiences.</p>
         </div>
-    </footer>
+        <div class="socials-icons">
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2024 Sahil Zaffer. All rights reserved.</p>
+        <form class="newsletter-form" action="#" method="post">
+            <input type="email" placeholder="Subscribe to my newsletter" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</footer>
+
+
+
+<script>
+    // Auto-update year
+    const year = new Date().getFullYear();
+    document.getElementById('year').textContent = year;
+
+    // Smooth scroll for back-to-top button
+    document.querySelector('.back-to-top').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
 
     <script src="script.js"></script>
 </body>
